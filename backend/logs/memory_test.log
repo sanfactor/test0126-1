@@ -1,0 +1,70 @@
+INFO:     Will watch for changes in these directories: ['/home/ubuntu/tokencourt/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [33539] using WatchFiles
+No OpenAI API key found. Using dummy responses for testing.
+INFO:     Started server process [33660]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+2025-01-26 09:54:28.357 | INFO     | app.routes.discussions:create_discussion:23 - Creating new discussion with ID: 2f839200-5580-4836-98b2-fb500bbb4ec0
+2025-01-26 09:54:28.357 | INFO     | app.routes.discussions:create_discussion:28 - Starting discussion for topic: Memory Test: Evaluating Layer 1 blockchain scalability
+2025-01-26 09:54:28.358 | INFO     | app.routes.discussions:create_discussion:30 - Received 9 messages from agents
+2025-01-26 09:54:28.358 | INFO     | app.routes.discussions:create_discussion:46 - Collecting votes from agents
+2025-01-26 09:54:28.358 | INFO     | app.routes.discussions:create_discussion:48 - Received 9 votes from agents
+2025-01-26 09:54:28.358 | INFO     | app.routes.discussions:create_discussion:69 - Discussion 2f839200-5580-4836-98b2-fb500bbb4ec0 completed successfully
+INFO:     127.0.0.1:37508 - "POST /api/v1/discussions HTTP/1.1" 200 OK
+2025-01-26 09:55:33.749 | INFO     | app.routes.discussions:create_discussion:23 - Creating new discussion with ID: 41b5eefa-6d27-4a69-a212-41e54927dd0e
+2025-01-26 09:55:33.749 | INFO     | app.routes.discussions:create_discussion:28 - Starting discussion for topic: Evaluate the potential impact of Layer 2 scaling solutions on Ethereum ecosystem growth, focusing on transaction throughput, gas fees, and network congestion
+2025-01-26 09:55:33.749 | INFO     | app.routes.discussions:create_discussion:30 - Received 9 messages from agents
+2025-01-26 09:55:33.750 | INFO     | app.routes.discussions:create_discussion:46 - Collecting votes from agents
+2025-01-26 09:55:33.750 | INFO     | app.routes.discussions:create_discussion:48 - Received 9 votes from agents
+2025-01-26 09:55:33.750 | INFO     | app.routes.discussions:create_discussion:69 - Discussion 41b5eefa-6d27-4a69-a212-41e54927dd0e completed successfully
+INFO:     127.0.0.1:52226 - "POST /api/v1/discussions HTTP/1.1" 200 OK
+2025-01-26 09:56:59.247 | INFO     | app.routes.discussions:create_discussion:23 - Creating new discussion with ID: 5a3388bc-a13e-41d1-ac40-c2d29f9568b9
+2025-01-26 09:56:59.247 | INFO     | app.routes.discussions:create_discussion:28 - Starting discussion for topic: Evaluate the potential impact of Layer 2 scaling solutions on Ethereum ecosystem growth
+2025-01-26 09:56:59.247 | INFO     | app.routes.discussions:create_discussion:30 - Received 9 messages from agents
+2025-01-26 09:56:59.247 | INFO     | app.routes.discussions:create_discussion:46 - Collecting votes from agents
+2025-01-26 09:56:59.247 | INFO     | app.routes.discussions:create_discussion:48 - Received 9 votes from agents
+2025-01-26 09:56:59.248 | INFO     | app.routes.discussions:create_discussion:69 - Discussion 5a3388bc-a13e-41d1-ac40-c2d29f9568b9 completed successfully
+INFO:     127.0.0.1:33698 - "POST /api/v1/discussions HTTP/1.1" 200 OK
+2025-01-26 09:57:09.161 | INFO     | app.routes.discussions:create_discussion:23 - Creating new discussion with ID: cda06d4b-68d8-4bfe-8b92-91545e11db24
+2025-01-26 09:57:09.161 | INFO     | app.routes.discussions:create_discussion:28 - Starting discussion for topic: Test discussion 2: Analyzing the impact of DeFi protocols on traditional finance
+2025-01-26 09:57:09.161 | INFO     | app.routes.discussions:create_discussion:30 - Received 9 messages from agents
+2025-01-26 09:57:09.162 | INFO     | app.routes.discussions:create_discussion:46 - Collecting votes from agents
+2025-01-26 09:57:09.162 | INFO     | app.routes.discussions:create_discussion:48 - Received 9 votes from agents
+2025-01-26 09:57:09.162 | INFO     | app.routes.discussions:create_discussion:69 - Discussion cda06d4b-68d8-4bfe-8b92-91545e11db24 completed successfully
+INFO:     127.0.0.1:35246 - "POST /api/v1/discussions HTTP/1.1" 200 OK
+2025-01-26 09:57:09.163 | INFO     | app.routes.discussions:create_discussion:23 - Creating new discussion with ID: ac2b43c6-5815-4264-be18-f1e4f4692106
+2025-01-26 09:57:09.163 | INFO     | app.routes.discussions:create_discussion:28 - Starting discussion for topic: Test discussion 1: Analyzing the impact of DeFi protocols on traditional finance
+2025-01-26 09:57:09.163 | INFO     | app.routes.discussions:create_discussion:30 - Received 9 messages from agents
+2025-01-26 09:57:09.163 | INFO     | app.routes.discussions:create_discussion:46 - Collecting votes from agents
+2025-01-26 09:57:09.163 | INFO     | app.routes.discussions:create_discussion:48 - Received 9 votes from agents
+2025-01-26 09:57:09.164 | INFO     | app.routes.discussions:create_discussion:69 - Discussion ac2b43c6-5815-4264-be18-f1e4f4692106 completed successfully
+INFO:     127.0.0.1:35244 - "POST /api/v1/discussions HTTP/1.1" 200 OK
+2025-01-26 09:57:09.164 | INFO     | app.routes.discussions:create_discussion:23 - Creating new discussion with ID: 9c7a4b42-7be8-44a3-a2e1-17a9f42ea0d7
+2025-01-26 09:57:09.164 | INFO     | app.routes.discussions:create_discussion:28 - Starting discussion for topic: Test discussion 5: Analyzing the impact of DeFi protocols on traditional finance
+2025-01-26 09:57:09.165 | INFO     | app.routes.discussions:create_discussion:30 - Received 9 messages from agents
+2025-01-26 09:57:09.165 | INFO     | app.routes.discussions:create_discussion:46 - Collecting votes from agents
+2025-01-26 09:57:09.165 | INFO     | app.routes.discussions:create_discussion:48 - Received 9 votes from agents
+2025-01-26 09:57:09.165 | INFO     | app.routes.discussions:create_discussion:69 - Discussion 9c7a4b42-7be8-44a3-a2e1-17a9f42ea0d7 completed successfully
+INFO:     127.0.0.1:35268 - "POST /api/v1/discussions HTTP/1.1" 200 OK
+2025-01-26 09:57:09.166 | INFO     | app.routes.discussions:create_discussion:23 - Creating new discussion with ID: 85abe05d-f9a8-4d28-987a-0adf2889233d
+2025-01-26 09:57:09.166 | INFO     | app.routes.discussions:create_discussion:28 - Starting discussion for topic: Test discussion 4: Analyzing the impact of DeFi protocols on traditional finance
+2025-01-26 09:57:09.166 | INFO     | app.routes.discussions:create_discussion:30 - Received 9 messages from agents
+2025-01-26 09:57:09.166 | INFO     | app.routes.discussions:create_discussion:46 - Collecting votes from agents
+2025-01-26 09:57:09.166 | INFO     | app.routes.discussions:create_discussion:48 - Received 9 votes from agents
+2025-01-26 09:57:09.166 | INFO     | app.routes.discussions:create_discussion:69 - Discussion 85abe05d-f9a8-4d28-987a-0adf2889233d completed successfully
+INFO:     127.0.0.1:35272 - "POST /api/v1/discussions HTTP/1.1" 200 OK
+2025-01-26 09:57:09.167 | INFO     | app.routes.discussions:create_discussion:23 - Creating new discussion with ID: f6d69606-f14b-484c-89d5-b3dfe5091d96
+2025-01-26 09:57:09.167 | INFO     | app.routes.discussions:create_discussion:28 - Starting discussion for topic: Test discussion 3: Analyzing the impact of DeFi protocols on traditional finance
+2025-01-26 09:57:09.167 | INFO     | app.routes.discussions:create_discussion:30 - Received 9 messages from agents
+2025-01-26 09:57:09.168 | INFO     | app.routes.discussions:create_discussion:46 - Collecting votes from agents
+2025-01-26 09:57:09.168 | INFO     | app.routes.discussions:create_discussion:48 - Received 9 votes from agents
+2025-01-26 09:57:09.168 | INFO     | app.routes.discussions:create_discussion:69 - Discussion f6d69606-f14b-484c-89d5-b3dfe5091d96 completed successfully
+INFO:     127.0.0.1:35276 - "POST /api/v1/discussions HTTP/1.1" 200 OK
+2025-01-26 09:58:04.167 | INFO     | app.routes.discussions:create_discussion:23 - Creating new discussion with ID: f94b96a8-1007-47a3-bf4b-89c5bfd96c82
+2025-01-26 09:58:04.167 | INFO     | app.routes.discussions:create_discussion:28 - Starting discussion for topic: Evaluate the potential impact of Layer 2 scaling solutions on Ethereum ecosystem growth, focusing on transaction throughput, gas fees, and network congestion
+2025-01-26 09:58:04.167 | INFO     | app.routes.discussions:create_discussion:30 - Received 9 messages from agents
+2025-01-26 09:58:04.167 | INFO     | app.routes.discussions:create_discussion:46 - Collecting votes from agents
+2025-01-26 09:58:04.168 | INFO     | app.routes.discussions:create_discussion:48 - Received 9 votes from agents
+2025-01-26 09:58:04.168 | INFO     | app.routes.discussions:create_discussion:69 - Discussion f94b96a8-1007-47a3-bf4b-89c5bfd96c82 completed successfully
+INFO:     127.0.0.1:51346 - "POST /api/v1/discussions HTTP/1.1" 200 OK
