@@ -2,6 +2,7 @@ from typing import List, Dict
 import os
 import logging
 import traceback
+import psutil
 from openai import OpenAI
 
 # Get logger for this module
@@ -48,6 +49,8 @@ except Exception as e:
 class AgentService:
     def __init__(self):
         self._agent_cache = {}
+        self._memory_threshold_mb = float(os.getenv("MEMORY_THRESHOLD_MB", "1024"))  # 1GB default
+        log.info(f"Initialized AgentService with memory threshold: {self._memory_threshold_mb}MB")
         self._agent_configs = {
             AgentRole.MARKET_ANALYST: "Analyzes market trends and token performance metrics",
             AgentRole.SECURITY_EXPERT: "Evaluates technical security aspects of blockchain projects",
@@ -60,11 +63,24 @@ class AgentService:
             AgentRole.ECOSYSTEM_EVALUATOR: "Assesses overall ecosystem health and integration"
         }
         
+    def _get_memory_usage(self) -> float:
+        """Get current memory usage in MB."""
+        process = psutil.Process(os.getpid())
+        return process.memory_info().rss / 1024 / 1024
+
     def get_agent(self, role: AgentRole) -> Agent:
-        """Get an agent for the specified role, creating it if it doesn't exist."""
+        """Get an agent for the specified role, creating it if it doesn't exist.
+        
+        Implements memory-aware agent creation with automatic cleanup when memory threshold is exceeded.
+        """
         try:
+            current_memory = self._get_memory_usage()
+            if current_memory > self._memory_threshold_mb:
+                log.warning(f"Memory usage ({current_memory:.2f}MB) exceeds threshold ({self._memory_threshold_mb}MB). Cleaning up...")
+                self._cleanup_agents()
+            
             if role not in self._agent_cache:
-                log.info(f"Creating new agent for role: {role.value}")
+                log.info(f"Creating new agent for role: {role.value}. Current memory: {self._get_memory_usage():.2f}MB")
                 description = self._agent_configs[role]
                 role_completion_fn = self._create_completion_fn(role.value, description)
                 
@@ -270,19 +286,29 @@ class AgentService:
         1. Clears the agent cache to free memory
         2. Ensures proper cleanup of any cached states
         3. Logs cleanup operations for monitoring
+        4. Forces garbage collection to reclaim memory
         """
+        import gc
         log.info("Starting agent resource cleanup")
         
         # Clean up each agent's resources individually
         for role, agent in self._agent_cache.items():
             try:
                 # Clear any cached states or memory
-                if hasattr(agent, 'llm') and hasattr(agent.llm, '__closure__'):
+                if hasattr(agent, 'llm'):
+                    if hasattr(agent.llm, '__closure__'):
+                        agent.llm.__closure__ = None
                     agent.llm = None
+                # Clear any other large attributes
+                if hasattr(agent, 'memory'):
+                    agent.memory = None
+                if hasattr(agent, 'conversation_history'):
+                    agent.conversation_history = []
                 log.info(f"Cleaned up agent resources for {role.value}")
             except Exception as e:
                 log.error(f"Error cleaning up agent {role.value}: {str(e)}")
         
-        # Clear the entire cache
+        # Clear the entire cache and force garbage collection
         self._agent_cache.clear()
-        log.info("Completed agent resource cleanup")
+        gc.collect()
+        log.info(f"Completed agent resource cleanup. Current memory usage: {self._get_memory_usage():.2f}MB")
